@@ -19,7 +19,7 @@ def login():
     print 
     print a+ " LOGIN FB"
     user = raw_input(a+" Masukkan Username: ")
-    password = raw_inpt(a+" Masukkan Password: ")
+    password = raw_input(a+" Masukkan Password: ")
     url = requests.get('https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=2&email='+user+'&locale=en_US&password='+password+'&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6')
     dev = url.content
     jsl = json.loads(dev)
@@ -28,7 +28,7 @@ def login():
         print h+" LoginSukses...."
         open("toket.txt", "w").write(jsl["access_token"])
         print 
-        pilih_super()
+        super()
 
     elif "www.facebook.com" in jsl["error_msg"]:
         print 
@@ -39,8 +39,17 @@ def login():
     else:
         print
         print m+ " Gagal Login.."
-        print
-
+        
+def super():
+    global toket
+    try:
+        toket = open("toket.txt", "r").read()
+    except IOError:
+        print " Tidak ada token"
+        os.system("rm -f toket.txt")
+        login()
+    pilih_super()
+    
 def pilih_super():
     peak = raw_input(h+" Input No: ")
     if peak == '':
