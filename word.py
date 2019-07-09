@@ -6,7 +6,11 @@ import os
 import sys
 import time
 
-d = "\033[90m", m = "\033[91m", h = "\033[32m", k = "\033[33m", p = "\033[97m"
+d = "\033[90m"
+m = "\033[91m"
+h = "\033[32m"
+k = "\033[33m"
+p = "\033[97m"
 
 data = []
 count = 0
