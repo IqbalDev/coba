@@ -45,7 +45,7 @@ def perulangan():
                     tam.write(word + "\n")
                     tam.close()
                     for i in data:
-                        print p+" ["+k+"#"+p+"]"+h " [ " + i + " ]"
+                        print p+" ["+k+"#"+p+"]"+h+ " [ " + p + i + h + " ]"
 
         except KeyboardInterrupt:
             try:
